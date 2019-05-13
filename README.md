@@ -2,6 +2,10 @@
 
 Essa aplicação tem o destino de demonstrar como é feito um CI/CD em Jenkins para produção, com push no Docker Hub, e como será feito a configuração do ambiente para o time de desenvolvimento, desta forma padronizando o ambiente de desenvolvimento, e ficando simples e fácil para o time poder trabalhar.
 
+Repositorio Docker Hub com imagens montadas com este projeto:
+
+[Stephanzbti DockerHub](https://hub.docker.com/u/stephanzbti)
+
 ## Desenvolvimento
 
 Para o time de desenvolvimento, foi criado um Dockerfile em cada aplicação e um Docker-Compose, para que seja feito o deployment da aplicação completa de uma única vez, logo, não é necessário criar cada container e executa-lo. Com essa metodologia o time de desenvolvimento não precisa conhecer sobre o ambiente em que a aplicação está sendo gerada, apenas ter o conhecimento de como será feito a execução da aplicação como um todo.
