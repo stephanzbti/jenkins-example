@@ -20,7 +20,7 @@ Com o Jenkins é possível a fácil criação e versionamento de cada imagem, de
 
 ## Dependências do Projeto
 
-Para que você utilize esta aplicação, é necessário que seja instalado as seguintes dependências:
+Para que você utilize esta aplicação, é necessário que seja instalado as seguintes dependências, sendo descrito o passo-a-passo no site das respectivas distribuidoras:
 
 [NodeJS](https://nodejs.org/en/download/package-manager/)
 
