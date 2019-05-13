@@ -1,10 +1,19 @@
 node {
     def frontend
     def backend
+
+    environment {
+        ALLOWED_ORIGIN = '*'
+        REDIS_ADDR     = 'redis:6379'
+        ENVIRONMENT    = 'production'
+        REACT_APP_BACKEND_WS     = 'ws://localhost:8080'
+        REACT_APP_BACKEND_URL    = 'http://localhost:8080'
+        NODE_ENV       = 'production'
+    }
     stage('build') {
         echo "Starting Build"
-        frontend = docker.build("stephanzbti/frontend-smarttbot", "./frontend/")
-        backend = docker.build("stephanzbti/backend-smarttbot", "./backend/")
+        frontend = docker.build("stephanzbti/frontend-smarttbot", "./frontend")
+        backend = docker.build("stephanzbti/backend-smarttbot", "./backend")
         echo "Finishing Build"
     }
     stage('RepositoryImage') {

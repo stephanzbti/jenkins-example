@@ -1,5 +1,11 @@
 node {
     def app
+
+    environment {
+        ALLOWED_ORIGIN = '*'
+        REDIS_ADDR     = 'redis:6379'
+        ENVIRONMENT    = 'production'
+    }
     stage('build') {
         echo "Starting Build"
         app = docker.build("stephanzbti/backend-smarttbot")
