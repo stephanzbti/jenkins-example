@@ -1,6 +1,6 @@
 node {
     def app
-
+    checkout scm
     environment {
         REACT_APP_BACKEND_WS     = 'ws://localhost:8080'
         REACT_APP_BACKEND_URL    = 'http://localhost:8080'
