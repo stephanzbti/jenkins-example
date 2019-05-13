@@ -23,9 +23,13 @@ Com o Jenkins é possível a fácil criação e versionamento de cada imagem, de
 Para que você utilize esta aplicação, é necessário que seja instalado as seguintes dependências:
 
 [NodeJS](https://nodejs.org/en/download/package-manager/)
+
 [Jenkins](https://jenkins.io/doc/book/installing/)
+
 [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
 [Docker-Compose](https://docs.docker.com/compose/install/)
+
 [GoLang](https://golang.org/doc/install#install)
 
 ## React
