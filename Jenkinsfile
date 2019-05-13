@@ -3,7 +3,9 @@ node {
     def backend
     stage('build') {
         echo "Starting Build"
+        sh "cd frontend"
         frontend = docker.build("stephanzbti/frontend-smarttbot")
+        sh "cd ../backend"
         backend = docker.build("stephanzbti/backend-smarttbot")
         echo "Finishing Build"
     }
