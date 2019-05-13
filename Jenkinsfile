@@ -3,10 +3,8 @@ node {
     def backend
     stage('build') {
         echo "Starting Build"
-        sh "cd frontend"
-        frontend = docker.build("stephanzbti/frontend-smarttbot")
-        sh "cd ../backend"
-        backend = docker.build("stephanzbti/backend-smarttbot")
+        frontend = docker.build("stephanzbti/frontend-smarttbot", "./frontend")
+        backend = docker.build("stephanzbti/backend-smarttbot", "./backend")
         echo "Finishing Build"
     }
     stage('RepositoryImage') {
