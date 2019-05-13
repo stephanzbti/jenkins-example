@@ -155,6 +155,23 @@ Podendo ser feito também via Docker, tendo sua imagem diretamente no DockerHub,
 
 Neste Build teremos apenas foco em 2 estágios que serão: **Build**, **RepositoryImage**, sendo eles respectivamentes geração de build e push para o repositório de imagens. Podendo ser feito também outros estágios, caso seja necessário, como por exemplo Deploy no Kubernetes.
 
+### Configuração Pipeline
+
+Para executar o Pipeline perfeitamente, é necessário fazer uma configuração interna do Jenkinsfile ou criar uma Credentials do tipo **Username with password**, contendo as configurações de acesso ao Docker Hub, o nome desta credentials é **docker-hub-credentials**.
+
+Para configurar as variáveis de ambiente no Jenkins, é necessário editar as seguintes linhas de acordo com a informação necessária em cada uma:
+
+```
+environment {
+    ALLOWED_ORIGIN = '*' -> Define qual o destino está configurado para aceitar as requisições. Podendo ser a URL de Destino ou * para aceitar requisição de qualquer origin.
+    REDIS_ADDR     = 'redis:6379' -> Redis URL.
+    ENVIRONMENT    = 'production' -> Environment da Execução. Responsável por buildar a aplicação no ambiente solicitado.
+    REACT_APP_BACKEND_WS     = 'ws://localhost:8080' -> Destino do Backend. Responsável por enviar as requisições proveniente do usuário para o backend processar e enviar as informações solicitadas.
+    REACT_APP_BACKEND_URL    = 'http://localhost:8080' -> Destino do Backend. Responsável por enviar as requisições proveniente do usuário para o backend processar e enviar as informações solicitadas.
+    NODE_ENV       = 'production' -> Environment da Execução. Responsável por buildar a aplicação no ambiente solicitado.
+}
+```
+
 ### FrontEnd
 
 No FrontEnd temos um arquivo Jenkins, responsável pela automatização da aplicação do Frontend, caso somente este seja necessário automatizar.
