@@ -1,7 +1,8 @@
 node {
+    checkout scm
+
     def frontend
     def backend
-    checkout scm
     environment {
         ALLOWED_ORIGIN = '*'
         REDIS_ADDR     = 'redis:6379'

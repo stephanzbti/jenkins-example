@@ -1,6 +1,7 @@
 node {
-    def app
     checkout scm
+
+    def app
     environment {
         ALLOWED_ORIGIN = '*'
         REDIS_ADDR     = 'redis:6379'
